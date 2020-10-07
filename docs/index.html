@@ -1,0 +1,274 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <p id="demo"></p>
+    <script>
+        // task 1:family structure to Javascript Object
+
+      let family = {
+        john: {
+          name: "John",
+          // John has two sons 
+          sons: {
+            
+            chris: {
+              name: "Chris",
+              // Chris has two Sons
+              sons: {
+                ali: {
+                  name: "Ali",
+                },
+                karim: {
+                  name: "Karim",
+                  id:"2",
+                },
+              },
+            },
+            alex: {
+              name: "alex",
+              // Alex has five sons
+              sons: {
+                john: {
+                  name: "john",
+                  // john has two sons
+                  sons: {
+                    ali: {
+                      name: "Ali",
+                      // ali has fours sons
+                      sons: {
+                        Suleiman: {
+                          name: "Suleiman",
+                          // Suleiman has two sons
+                          sons: {
+                            kareem: {
+                              name: "kareem",
+                            },
+                            raheem: {
+                              name: "raheem",
+                              // Raheem has two sons
+                              sons: {
+                                nadeem: {
+                                  name: "nadeem",
+                                },
+                                kaleem: {
+                                  name: "kaleem",
+                                  // Kaleem has two sons
+                                  sons: {
+                                    amir: {
+                                      name: "amir",
+                                    },
+                                    liaqat: {
+                                      name: "liaqat",
+                                    },
+                                  },
+                                },
+                              },
+                            },
+                          },
+                        },
+                        Usman: {
+                          name: "Usman",
+                        },
+                        Salman: {
+                          name: "Salman",
+                        },
+                        Javed: {
+                          name: "Javed",
+                        },
+                      },
+                    },
+                    jack: {
+                      name: "jack",
+                    },
+                  },
+                },
+                alex: {
+                  name: "alex",
+                },
+                Garret: {
+                  name: "Garret",
+                },
+                Wood: {
+                  name: "Wood",
+                  // Wood has 6 sons
+                  sons: {
+                    chris: {
+                      name: "chris",
+                    },
+                    roy: {
+                      name: "roy",
+                    },
+                    max: {
+                      name: "max",
+                      // Max has 5 sons
+                      sons: {
+                        Usman: {
+                          name: "Usman",
+                        },
+                        Salman: {
+                          name: "salman",
+                        },
+                        javed: {
+                          name: "javed",
+                        },
+                        mark: {
+                          name: "mark",
+                        },
+                        alex: {
+                          name: "alex",
+                        },
+                      },
+                    },
+                    nova: {
+                      name: "nova",
+                    },
+                    root: {
+                      name: "root",
+                    },
+                    mark: {
+                      name: "mark",
+                    },
+                  },
+                },
+                Hales: {
+                  name: "Hales",
+                },
+              },
+            },
+          },
+        },
+        jack: {
+          name: "jack",
+          // Jack has two sons
+          sons: {
+            Kevin: {
+              name: "Kevin",
+            },
+            DerekWood: {
+              name: "DerekWood",
+            },
+          },
+        },
+        david: {
+          name: "david's",
+          // David has one sons
+          sons: {
+            kegan: {
+              name: "Kegan",
+              // Kegan has one son
+              sons: {
+                alex: {
+                  name: "alex",
+                  // alex has two sons
+                  sons: {
+                    Jackma: {
+                      name: "Jackma",
+                      // Jackma has five sons
+                      sons: {
+                        kevin: {
+                          name: "kevin",
+                        },
+                        derek: {
+                          name: "derek",
+                        },
+                        trump: {
+                          name: "trump",
+                        },
+                        obama: {
+                          name: "obama",
+                        },
+                        bush: {
+                          name: "bush",
+                        },
+                      },
+                    },
+                    bill: {
+                      name: "bill",
+                      // bill has two sons
+                      sons: {
+                        robert: {
+                          name: "robert",
+                        },
+                        john: {
+                          name: "john",
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      };
+    //   end of task 1
+
+    // task 2 Change name of DerekWood to DerekKhan.
+    let nameDerek=family.jack.sons.DerekWood.name="derekKhan";
+    document.write(`Task 2 <br>`);
+    document.write(`Change name of derekwood to derekKhan : ${nameDerek} <br>`)
+    // end of task 2
+    // Task 3 - Change name Trump to Donald Trump
+    let namTrump=family.david.sons.kegan.sons.alex.sons.Jackma.sons.trump.name="donal Trump";
+    document.write(`<br>Task 3: <br>`);
+    document.write(`Change name trump to donal trump : ${namTrump} <br>`);
+
+    // end of task 3
+    // Task 4 - Remove two sons from Jackma.
+    let deleteJackSons=delete family.david.sons.kegan.sons.alex.sons.Jackma.sons.kevin;
+    let deleteJackSonsDerk=delete family.david.sons.kegan.sons.alex.sons.Jackma.sons.derek;
+   document.write(`<br> Task 4: <br>`);
+   document.write(`Removed first sons of jackma ${deleteJackSons} <br>`);
+   document.write(`Removed first sons of jackma ${deleteJackSonsDerk} <br><br>`);
+    //   End Task 4
+
+//    Task 5 - Print names of Suleiman sons.
+      document.write(`<br>Task 5 <br>`)
+      document.write(`Suleiman has two sons, names are : <br>`);
+      var suleinsons=family.john.sons.alex.sons.john.sons.ali.sons.Suleiman.sons;
+
+    for(var x in suleinsons){
+        document.write(`${suleinsons[x].name}<br>`);
+    }
+    //   End of Task 5
+
+    // Task 6 - Print all of family into Document using document.write.
+    document.write(`<br> Task 6 <br>`);
+
+    document.write(`<br> main family member are :<br>`);
+     for(var x in family){
+        console.log(family[x].name);
+        document.write(` *${family[x].name} <br>`);
+       
+        // for(var a in family.john.sons){
+        //     document.write(`<br>  -${family.john.sons[a].name}<br>`);
+
+        // }
+    }
+    document.write(`<br>All family member are : <br>`);
+
+    function printValues(obj) {
+  for (var key in obj) {
+      if (typeof obj[key] != "object") {
+          document.write(`${obj[key]}<br> `); 
+             
+      } else {
+          printValues(obj[key]);  
+      }
+  }
+}
+printValues(family)
+
+    // end of Task 6
+    
+
+
+
+
+     </script>
+  </body>
+</html>
